@@ -1,6 +1,6 @@
 import React from 'react';
 import { Toolbar } from '../widgets/Toolbar/Toolbar';
-import { useConfig } from '../app/providers/ConfigProvider';
+import { useConfig } from '../app/providers/useConfig';
 import { toCurl } from '../shared/utils/curl';
 
 type ResponseView = { status: number; timeMs: number; body: unknown } | null;

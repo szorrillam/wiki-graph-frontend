@@ -1,5 +1,5 @@
 import React from 'react';
-import { useConfig } from '../../app/providers/ConfigProvider';
+import { useConfig } from '../../app/providers/useConfig';
 import { EndpointCard, PageContainer } from '../../shared/ui/EndpointLayout';
 
 export const SearchPage: React.FC = () => {

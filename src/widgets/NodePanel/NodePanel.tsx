@@ -1,6 +1,6 @@
 import React from 'react';
 import { useGraphStore } from '../../store/graphStore';
-import { useConfig } from '../../app/providers/ConfigProvider';
+import { useConfig } from '../../app/providers/useConfig';
 
 export const NodePanel: React.FC<{ onExpand?: (title: string) => void }> = ({ onExpand }) => {
   const { selectedNode, nodesById } = useGraphStore((s) => ({ selectedNode: s.selectedNode, nodesById: s.nodesById }));

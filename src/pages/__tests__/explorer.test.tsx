@@ -1,4 +1,5 @@
-import { describe, it, expect } from 'vitest';
+import React from 'react'; 
+import { describe, it } from 'vitest';
 import { render } from '@testing-library/react';
 import { MemoryRouter, Route, Routes } from 'react-router-dom';
 import { AppProviders } from '../../app/providers/Providers';

@@ -1,9 +1,11 @@
 import React from 'react';
-import { useConfig } from '../../app/providers/ConfigProvider';
+import { useNavigate } from 'react-router-dom';
+import { useConfig } from '../../app/providers/useConfig';
 import { EndpointCard, PageContainer } from '../../shared/ui/EndpointLayout';
 
 export const ExplorePage: React.FC = () => {
   const { baseUrl, lang } = useConfig();
+  const navigate = useNavigate();
   const [title, setTitle] = React.useState('Theory of relativity');
   const [depth, setDepth] = React.useState(1);
   const [include, setInclude] = React.useState(true);
@@ -37,11 +39,18 @@ export const ExplorePage: React.FC = () => {
           </label>
           <label className="flex items-center gap-2 text-sm">
             <input type="checkbox" className="size-4" checked={include} onChange={(e) => setInclude(e.target.checked)} />
-            include_summaries
+            <span>include_summaries</span>
           </label>
         </div>
         <div className="mt-3 flex gap-2">
           <button className="btn btn-primary" onClick={submit} disabled={loading}>{loading ? 'Cargando…' : 'Explorar'}</button>
+          <button
+            className="btn btn-outline"
+            type="button"
+            onClick={() => navigate(`/explore/${encodeURIComponent(title)}?depth=${depth}&lang=${encodeURIComponent(lang)}&include_summaries=${include ? 'true' : 'false'}`)}
+          >
+            Abrir en Graph Explorer
+          </button>
         </div>
       </EndpointCard>
       {graph && (
@@ -79,8 +88,8 @@ export const ExplorePage: React.FC = () => {
                     </tr>
                   </thead>
                   <tbody>
-                    {graph.edges.map((e, i) => (
-                      <tr key={i} className="odd:bg-white even:bg-gray-50">
+                    {graph.edges.map((e) => (
+                      <tr key={`${e.from}->${e.to}`} className="odd:bg-white even:bg-gray-50">
                         <td className="px-2 py-1">{e.from}</td>
                         <td className="px-2 py-1">{e.to}</td>
                       </tr>

@@ -10,6 +10,7 @@ import { ExplorePage } from './pages/endpoints/ExplorePage'
 import { SaveExplorationPage } from './pages/endpoints/SaveExplorationPage'
 import { ListExplorationsPage } from './pages/endpoints/ListExplorationsPage'
 import { DeleteExplorationPage } from './pages/endpoints/DeleteExplorationPage'
+import { ExplorationsCrudPage } from './pages/ExplorationsCrud'
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
@@ -23,6 +24,7 @@ createRoot(document.getElementById('root')!).render(
           <Route path="/endpoint/save" element={<SaveExplorationPage />} />
           <Route path="/endpoint/list" element={<ListExplorationsPage />} />
           <Route path="/endpoint/delete" element={<DeleteExplorationPage />} />
+          <Route path="/explorations-crud" element={<ExplorationsCrudPage />} />
         </Routes>
       </BrowserRouter>
     </AppProviders>

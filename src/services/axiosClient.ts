@@ -4,7 +4,7 @@ import { z } from 'zod';
 import type { IApiClient, IHealthClient } from './types';
 import { GraphDTOSchema, SaveExplorationInSchema, SearchResponseSchema, ExplorationsListSchema } from './schemas';
 import type { GraphDTO, SaveExplorationIn, SearchResult } from '../entities/types';
-import { useConfig } from '../app/providers/ConfigProvider';
+import { useConfig } from '../app/providers/useConfig';
 import React from 'react';
 
 const createInstance = (baseURL: string): AxiosInstance => {

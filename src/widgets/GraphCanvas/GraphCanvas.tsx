@@ -1,7 +1,7 @@
 import React from 'react';
 import ForceGraph3D from 'react-force-graph-3d';
 import { useGraphStore, selectGraphData } from '../../store/graphStore';
-import { useConfig } from '../../app/providers/ConfigProvider';
+import { useConfig } from '../../app/providers/useConfig';
 
 type Props = {
   onNodeClick?: (id: string) => void;

@@ -1,5 +1,5 @@
 import React from 'react';
-import { useConfig } from '../../app/providers/ConfigProvider';
+import { useConfig } from '../../app/providers/useConfig';
 import { toast } from '../../processes/notifications/toast';
 
 type Props = {

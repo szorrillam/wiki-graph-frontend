@@ -1,6 +1,7 @@
 import { describe, it, expect } from 'vitest';
 import { renderHook, act } from '@testing-library/react';
-import { ConfigProvider, useConfig } from '../../app/providers/ConfigProvider';
+import { ConfigProvider } from '../../app/providers/ConfigProvider';
+import { useConfig } from '../../app/providers/useConfig';
 
 describe('ConfigProvider', () => {
   it('stores and reads baseUrl from localStorage and query override', () => {
